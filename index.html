@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mwamba Mulenga — Developer & Security Enthusiast</title>
+    <meta name="description" content="Mwamba Mulenga — CS student, Flutter developer, and cybersecurity enthusiast based in Zambia.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Background canvas -->
+<canvas id="bg-canvas"></canvas>
+<div id="scanlines"></div>
+
+<!-- Floating orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ── Navigation ── -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">MM<span class="accent">.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Open to opportunities
+            </div>
+            <h1 class="hero-name">Mwamba <span class="accent">Mulenga</span></h1>
+            <div class="hero-subtitle">
+                I build <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-desc">CS Student &nbsp;·&nbsp; Flutter Dev &nbsp;·&nbsp; Cybersecurity Enthusiast</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> Projects</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact</a>
+                <a href="#" class="btn btn-outline" id="download-cv"><i class="fas fa-download"></i> CV</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mwamba-mulenga-83a515234/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mwambamule06@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="profile-ring">
+                <img src="profile.jpg" alt="Mwamba Mulenga" class="profile-photo">
+                <div class="ring r1"></div>
+                <div class="ring r2"></div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card glass"><span class="stat-n">2+</span><span class="stat-l">Years Coding</span></div>
+                <div class="stat-card glass"><span class="stat-n">8+</span><span class="stat-l">Projects</span></div>
+                <div class="stat-card glass"><span class="stat-n">10+</span><span class="stat-l">Technologies</span></div>
+            </div>
+        </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</section>
+
+<!-- ── About ── -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-user"></i> Who I Am</div>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="about-grid">
+            <div class="about-photo-col">
+                <div class="about-img-wrap">
+                    <img src="profile.jpg" alt="Mwamba Mulenga" class="about-photo" loading="lazy">
+                    <div class="about-img-glow"></div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card glass"><span class="stat-n">2+</span><span class="stat-l">Years Coding</span></div>
+                    <div class="stat-card glass"><span class="stat-n">8+</span><span class="stat-l">Projects Built</span></div>
+                    <div class="stat-card glass"><span class="stat-n">10+</span><span class="stat-l">Technologies</span></div>
+                </div>
+            </div>
+            <div class="about-text-col">
+                <p>I'm a <strong>Computer Science student</strong> at ZCAS University with a deep passion for <span class="accent">mobile application development</span> and <span class="accent">cybersecurity</span>. I thrive at the intersection of building elegant user experiences and understanding how to protect them.</p>
+                <p>My journey in tech started with curiosity about how digital systems work — which led me to both building cross-platform apps with <strong>Flutter</strong> and exploring network security with <strong>Kali Linux</strong> and <strong>Wireshark</strong>.</p>
+                <div class="about-details">
+                    <div class="detail-item"><i class="fas fa-graduation-cap"></i><div><span class="dl">Education</span><span class="dv">IT &amp; Software Dev — ZCAS University</span></div></div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i><div><span class="dl">Location</span><span class="dv">Zambia</span></div></div>
+                    <div class="detail-item"><i class="fas fa-envelope"></i><div><span class="dl">Email</span><span class="dv">mwambamule06@gmail.com</span></div></div>
+                    <div class="detail-item"><i class="fas fa-rocket"></i><div><span class="dl">Focus</span><span class="dv">Flutter Dev &amp; Cybersecurity</span></div></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Let's Connect <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills" class="section section-alt">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-code"></i> What I Know</div>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card glass">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>Languages</h3>
+                <div class="skill-bars">
+                    <div class="skill-row"><div class="skill-row-top"><span>Python</span><span class="skill-pct">0%</span></div><div class="bar"><div class="bar-fill" data-width="85"></div></div></div>
+                    <div class="skill-row"><div class="skill-row-top"><span>Dart</span><span class="skill-pct">0%</span></div><div class="bar"><div class="bar-fill" data-width="80"></div></div></div>
+                    <div class="skill-row"><div class="skill-row-top"><span>JavaScript</span><span class="skill-pct">0%</span></div><div class="bar"><div class="bar-fill" data-width="70"></div></div></div>
+                    <div class="skill-row"><div class="skill-row-top"><span>Java</span><span class="skill-pct">0%</span></div><div class="bar"><div class="bar-fill" data-width="65"></div></div></div>
+                    <div class="skill-row"><div class="skill-row-top"><span>SQL</span><span class="skill-pct">0%</span></div><div class="bar"><div class="bar-fill" data-width="75"></div></div></div>
+                </div>
+            </div>
+            <div class="skill-card glass">
+                <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Frameworks &amp; Tools</h3>
+                <div class="tags">
+                    <span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Git &amp; GitHub</span><span class="tag">Linux</span><span class="tag">GNS3</span><span class="tag">MySQL</span><span class="tag">Android Studio</span><span class="tag">VS Code</span>
+                </div>
+            </div>
+            <div class="skill-card glass">
+                <div class="skill-icon sec"><i class="fas fa-shield-alt"></i></div>
+                <h3>Security &amp; Networking</h3>
+                <div class="tags">
+                    <span class="tag sec">Kali Linux</span><span class="tag sec">Wireshark</span><span class="tag sec">Network Analysis</span><span class="tag sec">Wireless Security</span><span class="tag sec">Troubleshooting</span>
+                </div>
+            </div>
+            <div class="skill-card glass">
+                <div class="skill-icon soft"><i class="fas fa-users"></i></div>
+                <h3>Soft Skills</h3>
+                <div class="tags">
+                    <span class="tag soft">Problem Solving</span><span class="tag soft">Team Collaboration</span><span class="tag soft">Communication</span><span class="tag soft">Project Management</span><span class="tag soft">Critical Thinking</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-layer-group"></i> What I've Built</div>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb flutter-proj"><i class="fas fa-user-shield"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">Facial Recognition</span><span class="ptag">Firebase</span></div>
+                    <h3>QuizGuard</h3>
+                    <p>A university application built to prevent academic dishonesty. Uses facial recognition and secure session management to monitor students in real time during online assessments.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb security-proj"><i class="fas fa-film"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">TMDB API</span></div>
+                    <h3>CineVault</h3>
+                    <p>A cross-platform movie and TV discovery app built with Flutter and Dart. Integrates the TMDB API to fetch and display real-time media data with a clean, responsive UI.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb db-proj"><i class="fas fa-cash-register"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">MySQL</span><span class="ptag">Python</span></div>
+                    <h3>Point of Sale System</h3>
+                    <p>A desktop/mobile POS application handling transaction processing, inventory logic, and database management. Built for real-world retail and business use cases.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb proj-indigo"><i class="fas fa-lock"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">Encryption</span></div>
+                    <h3>Student Auth System</h3>
+                    <p>A secure login and authentication platform focused on credential encryption and session handling — designed for institutional use with strong security fundamentals.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb proj-amber"><i class="fas fa-fire-alt"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Sophos</span><span class="ptag">Networking</span><span class="ptag">Starlink</span></div>
+                    <h3>Sophos Firewall Deployment</h3>
+                    <p>Technical planning and deployment of a Sophos Firewall for an office network — implementing content filtering, traffic regulation, and securing a Starlink gateway.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="project-card glass">
+                <div class="card-overlay"><span><i class="fab fa-github"></i> View Project</span></div>
+                <div class="project-thumb proj-blue"><i class="fas fa-database"></i></div>
+                <div class="project-body">
+                    <div class="ptags"><span class="ptag">Python</span><span class="ptag">MySQL</span><span class="ptag">Data Migration</span></div>
+                    <h3>Financial DB Migration</h3>
+                    <p>Managed the technical migration of financial databases and loan management software, ensuring complete data integrity and zero downtime throughout the transition process.</p>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer">
+            <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fab fa-github"></i> View All on GitHub</a>
+        </div>
+    </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience" class="section section-alt">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-stream"></i> My Journey</div>
+        <h2 class="section-title">Experience &amp; <span class="accent">Education</span></h2>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content glass">
+                    <span class="tl-date"><i class="fas fa-calendar-alt"></i> 2023 – 2027 (Expected)</span>
+                    <h3>BSc Information Technology &amp; Software Development</h3>
+                    <span class="tl-sub"><i class="fas fa-university"></i> ZCAS University, Zambia</span>
+                    <p>Studying core CS disciplines including algorithms, data structures, operating systems, computer networks, and software engineering. Building applied projects across mobile development and cybersecurity throughout the programme.</p>
+                    <div class="ptags"><span class="ptag">Algorithms</span><span class="ptag">Networking</span><span class="ptag">Software Engineering</span><span class="ptag">Database Systems</span></div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content glass">
+                    <span class="tl-date"><i class="fas fa-calendar-alt"></i> 2023 – Present</span>
+                    <h3>Flutter Mobile Development</h3>
+                    <span class="tl-sub"><i class="fas fa-mobile-alt"></i> Independent Projects</span>
+                    <p>Designed and shipped multiple cross-platform apps using Flutter and Dart — including QuizGuard, CineVault, and a full Point of Sale system. Integrated Firebase for real-time data, authentication, and cloud functions.</p>
+                    <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">Firebase</span><span class="ptag">TMDB API</span></div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content glass">
+                    <span class="tl-date"><i class="fas fa-calendar-alt"></i> 2024 – Present</span>
+                    <h3>Cybersecurity &amp; Network Engineering</h3>
+                    <span class="tl-sub"><i class="fas fa-shield-alt"></i> Security Projects &amp; Research</span>
+                    <p>Hands-on work in penetration testing, firewall deployment (Sophos / Starlink), and network simulation with GNS3. Developed a CompTIA Security+ preparation framework covering threat analysis, cryptography, and AI in defensive operations.</p>
+                    <div class="ptags"><span class="ptag">Kali Linux</span><span class="ptag">Wireshark</span><span class="ptag">GNS3</span><span class="ptag">Sophos Firewall</span></div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content glass">
+                    <span class="tl-date"><i class="fas fa-calendar-alt"></i> 2024 – Present</span>
+                    <h3>Linux System Administration &amp; Python Automation</h3>
+                    <span class="tl-sub"><i class="fas fa-terminal"></i> Systems &amp; Infrastructure</span>
+                    <p>Extensive work with Ubuntu in virtualized environments — managing kernel updates, resolving dependencies, and optimizing performance in VirtualBox. Applied Python scripting for backend automation and data processing.</p>
+                    <div class="ptags"><span class="ptag">Ubuntu</span><span class="ptag">VirtualBox</span><span class="ptag">Python</span><span class="ptag">MySQL</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Certifications ── -->
+<section id="certifications" class="section">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-certificate"></i> Credentials</div>
+        <h2 class="section-title">Certs &amp; <span class="accent">Achievements</span></h2>
+        <div class="certs-grid">
+            <div class="cert-card glass">
+                <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="cert-info">
+                    <h3>CompTIA Security+ (SY0-701)</h3>
+                    <span class="cert-issuer">CompTIA — In Progress</span>
+                    <span class="cert-date">2024 – Present</span>
+                </div>
+            </div>
+            <div class="cert-card glass">
+                <div class="cert-icon"><i class="fas fa-fire-alt"></i></div>
+                <div class="cert-info">
+                    <h3>Sophos Firewall Certified</h3>
+                    <span class="cert-issuer">Sophos</span>
+                    <span class="cert-date">2024</span>
+                </div>
+            </div>
+            <div class="cert-card glass">
+                <div class="cert-icon"><i class="fas fa-terminal"></i></div>
+                <div class="cert-info">
+                    <h3>Linux System Administration</h3>
+                    <span class="cert-issuer">Self-Directed · Ubuntu &amp; VirtualBox</span>
+                    <span class="cert-date">2024</span>
+                </div>
+            </div>
+            <div class="cert-card glass">
+                <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="cert-info">
+                    <h3>BSc IT &amp; Software Development</h3>
+                    <span class="cert-issuer">ZCAS University — Ongoing</span>
+                    <span class="cert-date">2023 – 2027</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact" class="section section-alt">
+    <div class="container">
+        <div class="section-tag"><i class="fas fa-envelope"></i> Let's Talk</div>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p class="contact-intro">Have a project idea, want to collaborate, or just want to say hi? I'd love to hear from you.</p>
+                <div class="contact-links">
+                    <a href="mailto:mwambamule06@gmail.com" class="contact-link glass"><i class="fas fa-envelope"></i><div><span class="cl-l">Email</span><span class="cl-v">mwambamule06@gmail.com</span></div></a>
+                    <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" class="contact-link glass"><i class="fab fa-github"></i><div><span class="cl-l">GitHub</span><span class="cl-v">github.com/dmdmfd</span></div></a>
+                    <a href="https://www.linkedin.com/in/mwamba-mulenga-83a515234/" target="_blank" rel="noopener noreferrer" class="contact-link glass"><i class="fab fa-linkedin"></i><div><span class="cl-l">LinkedIn</span><span class="cl-v">Mwamba Mulenga</span></div></a>
+                </div>
+            </div>
+            <form class="contact-form glass" id="contact-form">
+                <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+                <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+                <div class="form-group"><label for="cf-subject">Subject</label><input type="text" id="cf-subject" name="subject" placeholder="What's this about?"></div>
+                <div class="form-group"><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="4" placeholder="Tell me about your project or idea..." required></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Send Message</button>
+                <div id="form-status" class="form-status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer id="footer">
+    <div class="container footer-inner">
+        <span class="footer-logo">MM<span class="accent">.</span></span>
+        <span class="footer-copy">© 2026 Mwamba Mulenga · Lusaka, Zambia</span>
+        <div class="footer-socials">
+            <a href="https://github.com/dmdmfd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mwamba-mulenga-83a515234/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:mwambamule06@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/script.js"></script>
+</body>
+</html>
