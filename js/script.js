@@ -453,28 +453,32 @@ document.addEventListener('mousemove', (e) => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
+        const btn  = form.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-        btn.disabled = true;
+        btn.disabled  = true;
 
-        const name    = (form.name    ? form.name.value.trim()    : '');
-        const email   = (form.email   ? form.email.value.trim()   : '');
-        const subject = (form.subject ? form.subject.value.trim() : '');
-        const message = (form.message ? form.message.value.trim() : '');
-
-        const sub  = encodeURIComponent(subject || `Portfolio contact from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-
-        setTimeout(() => {
-            window.location.href = `mailto:mwambamule06@gmail.com?subject=${sub}&body=${body}`;
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString(),
+        })
+        .then(() => {
             if (status) {
                 status.className   = 'form-status success';
-                status.textContent = 'Your email client should open. Thanks for reaching out!';
+                status.textContent = 'Message sent! I\'ll get back to you soon.';
             }
+            form.reset();
+        })
+        .catch(() => {
+            if (status) {
+                status.className   = 'form-status error';
+                status.textContent = 'Something went wrong. Please try again.';
+            }
+        })
+        .finally(() => {
             btn.innerHTML = orig;
             btn.disabled  = false;
-            form.reset();
-        }, 800);
+        });
     });
 })();
