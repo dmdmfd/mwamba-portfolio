@@ -457,13 +457,21 @@ document.addEventListener('mousemove', (e) => {
         const orig = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
         btn.disabled  = true;
+        if (status) {
+            status.className   = 'form-status';
+            status.textContent = '';
+        }
 
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(new FormData(form)).toString(),
         })
-        .then(() => {
+        .then((response) => {
+            // fetch only rejects on network failure; Netlify 4xx/5xx still resolve.
+            if (!response.ok) {
+                throw new Error('Form submission failed (' + response.status + ')');
+            }
             if (status) {
                 status.className   = 'form-status success';
                 status.textContent = 'Message sent! I\'ll get back to you soon.';
