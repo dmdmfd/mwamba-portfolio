@@ -232,7 +232,21 @@
     const ring = document.getElementById('cursor-ring');
     if (!dot || !ring) return;
 
-    document.body.classList.add('has-custom-cursor');
+    // CSS hides the drawn cursor under reduced motion, but has-custom-cursor
+    // also sets cursor:none. Leave the system pointer in place in that case.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function syncCursor() {
+        const useCustom = !reduceMotion.matches;
+        document.body.classList.toggle('has-custom-cursor', useCustom);
+        if (!useCustom) {
+            dot.style.opacity = '0';
+            ring.style.opacity = '0';
+        }
+    }
+
+    syncCursor();
+    reduceMotion.addEventListener('change', syncCursor);
 
     let mouseX = -100, mouseY = -100;
     let ringX  = -100, ringY  = -100;
@@ -240,6 +254,7 @@
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        if (reduceMotion.matches) return;
         dot.style.opacity  = '1';
         ring.style.opacity = '1';
     }, { passive: true });
@@ -272,6 +287,7 @@
         ring.style.opacity = '0';
     });
     document.addEventListener('mouseenter', () => {
+        if (reduceMotion.matches) return;
         dot.style.opacity  = '1';
         ring.style.opacity = '1';
     });
