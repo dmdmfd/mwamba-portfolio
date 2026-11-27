@@ -96,15 +96,35 @@
         navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
+    const links = document.querySelectorAll('.nav-links a');
+
+    function setOpen(open) {
+        navbar.classList.toggle('nav-open', open);
+        if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
     if (toggle) {
         toggle.addEventListener('click', () => {
-            navbar.classList.toggle('nav-open');
+            setOpen(!navbar.classList.contains('nav-open'));
         });
     }
 
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbar.classList.contains('nav-open')) {
+            setOpen(false);
+            toggle?.focus();
+        }
+    });
+
+    // The toggle is hidden above 960px. Drop the open class there so a menu
+    // opened on a phone does not stay expanded after rotating to landscape.
+    const desktopNav = window.matchMedia('(min-width: 961px)');
+    desktopNav.addEventListener('change', () => {
+        if (desktopNav.matches) setOpen(false);
+    });
+
     // Active link on scroll
     const sections = document.querySelectorAll('section[id]');
-    const links    = document.querySelectorAll('.nav-links a');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -120,7 +140,7 @@
 
     // Close mobile nav on link click
     links.forEach(a => {
-        a.addEventListener('click', () => navbar.classList.remove('nav-open'));
+        a.addEventListener('click', () => setOpen(false));
     });
 })();
 
