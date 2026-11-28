@@ -658,6 +658,9 @@ a { color:inherit; text-decoration:none; }
 .cl-v { display:block; font-size:0.84rem; color:var(--text); font-weight:500; }
 
 .contact-form { border-radius:var(--r); padding:1.75rem; }
+/* Netlify honeypot: must stay a real text field, hidden only visually.
+   type=hidden and the hidden attribute are skipped by most bots. */
+.form-hp { display:none; }
 .form-group { margin-bottom:1.1rem; }
 .form-group label { display:block; font-size:0.76rem; color:var(--text2); font-weight:500; margin-bottom:0.45rem; text-transform:uppercase; letter-spacing:0.05em; }
 .form-group input,
